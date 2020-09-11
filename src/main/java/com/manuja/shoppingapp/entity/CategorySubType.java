@@ -16,6 +16,15 @@ public class CategorySubType {
     public CategorySubType() {
     }
 
+    @Override
+    public String toString() {
+        return "CategorySubType{" +
+                "Id=" + Id +
+                ", categoryTypeId=" + categoryTypeId +
+                ", subTypeName='" + subTypeName + '\'' +
+                '}';
+    }
+
     public Integer getId() {
         return Id;
     }

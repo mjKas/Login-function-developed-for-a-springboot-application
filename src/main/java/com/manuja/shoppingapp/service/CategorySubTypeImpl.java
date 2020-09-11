@@ -3,9 +3,10 @@ package com.manuja.shoppingapp.service;
 import com.manuja.shoppingapp.entity.CategorySubType;
 import com.manuja.shoppingapp.repository.CategorySubTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CategorySubTypeImpl implements CategorySubTypeService{
     @Autowired
     private CategorySubTypeRepository categorySubTypeRepository;

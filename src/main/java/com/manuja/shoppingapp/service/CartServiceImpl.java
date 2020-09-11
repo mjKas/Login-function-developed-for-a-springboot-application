@@ -3,9 +3,10 @@ package com.manuja.shoppingapp.service;
 import com.manuja.shoppingapp.entity.Cart;
 import com.manuja.shoppingapp.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CartServiceImpl implements CartService {
     @Autowired
     private CartRepository cartRepository;

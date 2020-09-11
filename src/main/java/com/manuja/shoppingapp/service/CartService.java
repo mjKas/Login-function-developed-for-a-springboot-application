@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface CartService {
     public void Save(Cart cart);
     public void Update(Cart cart);

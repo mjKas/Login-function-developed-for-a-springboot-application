@@ -14,6 +14,14 @@ public class UserType {
     public UserType() {
     }
 
+    @Override
+    public String toString() {
+        return "UserType{" +
+                "id=" + id +
+                ", userType='" + userType + '\'' +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }

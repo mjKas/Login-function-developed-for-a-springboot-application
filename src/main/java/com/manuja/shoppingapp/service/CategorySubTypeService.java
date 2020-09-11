@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface CategorySubTypeService {
     public void Save(CategorySubType categorySubType);
     public void Update(CategorySubType categorySubType);

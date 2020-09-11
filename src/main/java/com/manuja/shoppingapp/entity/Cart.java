@@ -19,6 +19,16 @@ public class Cart {
     public Cart() {
     }
 
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", price=" + price +
+                ", Totalquantity=" + Totalquantity +
+                ", cartItemId=" + cartItemId +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }
