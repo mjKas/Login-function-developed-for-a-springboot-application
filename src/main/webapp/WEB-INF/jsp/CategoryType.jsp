@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="springtag" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,9 +44,14 @@
     <br>
     <br>
     <div class="row">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Save" class="btn btn-primary"/>
-        &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-secondary">Update</button>
-        &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-secondary">Delete</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;<c:choose>
+        <c:when test="${saveFlag}">
+        <input type="submit" value="Save" class="btn btn-primary"/>
+        </c:when>
+        <c:otherwise>
+        &nbsp;<input type="submit" value="Update" class="btn btn-primary"/>
+        </c:otherwise>
+    </c:choose>
         &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-secondary">View All</button>
         <div class="col-2">
             <input type="product type id" class="form-control" id="id" placeholder="Enter Product ID">
@@ -58,9 +64,32 @@
     <br>
     <br>
     <div class="row">
-        &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-1"><label for="">Id</div>
-        <div class="col-3"><label for="">Product Type Name</div>
-        <div class="col-3"><label for="">Description</div>
+
+        <table class="table table-hover" >
+            <thead>
+            <tr>
+                <td>Id</td>
+                <td>Product Type Name</td>
+                <td>Description</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+                <c:forEach items="${catTypeList}" var="categoryType">
+                    <tr>
+                    <td>${categoryType.id}</td>
+                    <td>${categoryType.productType}</td>
+                    <td>${categoryType.description}</td>
+                    <td><a href="<c:url value='/edit-categorytype-${categoryType.id}'/>" class="btn btn-warning">edit</a></td>
+                        <td><a href="<c:url value='/delete-categorytype-${categoryType.id}'/>" class="btn btn-danger">delete</a></td>
+                    </tr></c:forEach>
+
+            </tbody>
+
+        </table>
+
     </div>
 </springtag:form>
 
