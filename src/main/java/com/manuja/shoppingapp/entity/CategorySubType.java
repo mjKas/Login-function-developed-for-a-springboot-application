@@ -8,10 +8,12 @@ public class CategorySubType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
-    @Column(name = "category_typeid")
-    private Integer categoryTypeId;
     @Column(name = "sub_type_name")
     private String subTypeName;
+
+    @ManyToOne
+    @JoinColumn (name="categorytype_id")
+    private CategoryType categoryTypeObj;
 
     public CategorySubType() {
     }
@@ -20,9 +22,17 @@ public class CategorySubType {
     public String toString() {
         return "CategorySubType{" +
                 "Id=" + Id +
-                ", categoryTypeId=" + categoryTypeId +
+                ", categoryTypeId=" +
                 ", subTypeName='" + subTypeName + '\'' +
                 '}';
+    }
+
+    public CategoryType getCategoryTypeObj() {
+        return categoryTypeObj;
+    }
+
+    public void setCategoryTypeObj(CategoryType categoryTypeObj) {
+        this.categoryTypeObj = categoryTypeObj;
     }
 
     public Integer getId() {
@@ -31,14 +41,6 @@ public class CategorySubType {
 
     public void setId(Integer id) {
         Id = id;
-    }
-
-    public Integer getCategoryTypeId() {
-        return categoryTypeId;
-    }
-
-    public void setCategoryTypeId(Integer categoryTypeId) {
-        this.categoryTypeId = categoryTypeId;
     }
 
     public String getSubTypeName() {
