@@ -6,12 +6,12 @@ import java.sql.Blob;
 public class ProductItemPIcture {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private  Integer id;
-    @Column(name = "product_item_id")
-    private Integer ProductItemId;
     @Column(name = "picture")
     private Blob Picture;
     @Column(name = "path")
     private int path;
+    @ManyToOne @JoinColumn(name = "product_itemid")
+    private ProductItem productItemObj;
 
     public ProductItemPIcture() {
     }
@@ -20,9 +20,9 @@ public class ProductItemPIcture {
     public String toString() {
         return "ProductItemPIcture{" +
                 "id=" + id +
-                ", ProductItemId=" + ProductItemId +
                 ", Picture=" + Picture +
                 ", path=" + path +
+                ", productItemObj=" + productItemObj +
                 '}';
     }
 
@@ -34,12 +34,12 @@ public class ProductItemPIcture {
         this.id = id;
     }
 
-    public Integer getProductItemId() {
-        return ProductItemId;
+    public ProductItem getProductItemObj() {
+        return productItemObj;
     }
 
-    public void setProductItemId(Integer productItemId) {
-        ProductItemId = productItemId;
+    public void setProductItemObj(ProductItem productItemObj) {
+        this.productItemObj = productItemObj;
     }
 
     public Blob getPicture() {

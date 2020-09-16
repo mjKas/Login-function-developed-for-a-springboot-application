@@ -15,8 +15,8 @@ public class Employee {
     private String email;
     @Column(name = "contact_no")
     private String contactNo;
-    @Column(name = "userid")
-    private Integer UserId;
+    @OneToOne @JoinColumn(name = "userid", referencedColumnName = "id")
+    private User user;
 
     public Employee() {
     }
@@ -29,7 +29,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", contactNo='" + contactNo + '\'' +
-                ", UserId=" + UserId +
+                ", user=" + user +
                 '}';
     }
 
@@ -73,11 +73,11 @@ public class Employee {
         this.contactNo = contactNo;
     }
 
-    public Integer getUserId() {
-        return UserId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Integer userId) {
-        UserId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

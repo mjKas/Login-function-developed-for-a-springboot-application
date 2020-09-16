@@ -10,7 +10,8 @@ public class UserType {
     private Integer id;
     @Column(name = "user_type")
     private String userType;
-
+    @OneToOne (mappedBy = "userType")
+    private  User user;
     public UserType() {
     }
 

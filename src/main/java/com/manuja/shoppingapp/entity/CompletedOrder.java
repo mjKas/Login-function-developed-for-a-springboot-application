@@ -1,6 +1,7 @@
 package com.manuja.shoppingapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity @Table(name = "completed_order")
 public class CompletedOrder {
@@ -18,6 +19,8 @@ public class CompletedOrder {
     private int Quantity;
     @Column(name = "total")
     private double total;
+    @OneToMany(mappedBy = "completedOrderObj")
+    private List<SoldItem>soldItems;
 
     public CompletedOrder() {
     }

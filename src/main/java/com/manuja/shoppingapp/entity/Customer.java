@@ -21,8 +21,8 @@ public class Customer {
     private String zipCode;
     @Column(name = "cotact_no")
     private String contactNo;
-    @Column(name = "userid")
-    private Integer userId;
+    @OneToOne @JoinColumn(name = "userid", referencedColumnName = "id")
+    private User user;
 
     public Customer() {
     }
@@ -38,7 +38,7 @@ public class Customer {
                 ", getShippingAdressL2='" + getShippingAdressL2 + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", contactNo='" + contactNo + '\'' +
-                ", userId=" + userId +
+                ", user=" + user +
                 '}';
     }
 
@@ -106,11 +106,11 @@ public class Customer {
         this.contactNo = contactNo;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

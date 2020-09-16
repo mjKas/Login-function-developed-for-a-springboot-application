@@ -6,13 +6,13 @@ import javax.persistence.*;
 public class SoldItem {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
-    @Column(name = "completed_order_id")
-    private Integer CompletedOrderId;
     @Column(name = "product_id")
     private Integer ProductItemId;
     //how to get productItemID, while it's not connected to product_item???????
     @Column(name = "quantity")
     private int Quantity;
+    @ManyToOne @JoinColumn(name = "completed_order_id")
+    private CompletedOrder completedOrderObj;
 
     public SoldItem() {
     }
@@ -21,9 +21,9 @@ public class SoldItem {
     public String toString() {
         return "SoldItem{" +
                 "Id=" + Id +
-                ", CompletedOrderId=" + CompletedOrderId +
                 ", ProductItemId=" + ProductItemId +
                 ", Quantity=" + Quantity +
+                ", completedOrderObj=" + completedOrderObj +
                 '}';
     }
 
@@ -35,12 +35,12 @@ public class SoldItem {
         Id = id;
     }
 
-    public Integer getCompletedOrderId() {
-        return CompletedOrderId;
+    public CompletedOrder getCompletedOrderObj() {
+        return completedOrderObj;
     }
 
-    public void setCompletedOrderId(Integer completedOrderId) {
-        CompletedOrderId = completedOrderId;
+    public void setCompletedOrderObj(CompletedOrder completedOrderObj) {
+        this.completedOrderObj = completedOrderObj;
     }
 
     public Integer getProductItemId() {

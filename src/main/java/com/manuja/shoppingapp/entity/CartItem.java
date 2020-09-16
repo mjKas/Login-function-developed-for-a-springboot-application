@@ -7,12 +7,13 @@ import javax.persistence.*;
 public class CartItem {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
-    @Column(name = "cartid")
-    private Integer cartId;
     @Column(name = "product_itemid")
     private Integer ProductItemID;
     @Column(name = "quantity")
     private int Quantity;
+    @ManyToOne
+    @JoinColumn(name = "cartid")
+    private Cart cartobj;
 
     public CartItem() {
     }
@@ -21,9 +22,9 @@ public class CartItem {
     public String toString() {
         return "CartItem{" +
                 "Id=" + Id +
-                ", cartId=" + cartId +
                 ", ProductItemID=" + ProductItemID +
                 ", Quantity=" + Quantity +
+                ", cartobj=" + cartobj +
                 '}';
     }
 
@@ -35,12 +36,12 @@ public class CartItem {
         Id = id;
     }
 
-    public Integer getCartId() {
-        return cartId;
+    public Cart getCartobj() {
+        return cartobj;
     }
 
-    public void setCartId(Integer cartId) {
-        this.cartId = cartId;
+    public void setCartobj(Cart cartobj) {
+        this.cartobj = cartobj;
     }
 
     public Integer getProductItemID() {

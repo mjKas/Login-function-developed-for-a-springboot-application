@@ -1,6 +1,7 @@
 package com.manuja.shoppingapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -11,8 +12,10 @@ public class Product {
     private String name;
     @Column(name = "description")
     private String description;
-    @Column(name = "category_sub_typeid")
-    private Integer categorySubTypeId;
+    @ManyToOne @JoinColumn(name = "category_sub_typeid")
+    private CategorySubType categorySubTypeobj;
+    @OneToMany(mappedBy = "productObj")
+    private List<ProductItem>productItems;
 
     public Product() {
     }
@@ -23,7 +26,7 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", categorySubTypeId=" + categorySubTypeId +
+                ", categorySubTypeobj=" + categorySubTypeobj +
                 '}';
     }
 
@@ -51,11 +54,11 @@ public class Product {
         this.description = description;
     }
 
-    public Integer getCategorySubTypeId() {
-        return categorySubTypeId;
+    public CategorySubType getCategorySubTypeobj() {
+        return categorySubTypeobj;
     }
 
-    public void setCategorySubTypeId(Integer categorySubTypeId) {
-        this.categorySubTypeId = categorySubTypeId;
+    public void setCategorySubTypeobj(CategorySubType categorySubTypeobj) {
+        this.categorySubTypeobj = categorySubTypeobj;
     }
 }

@@ -1,6 +1,7 @@
 package com.manuja.shoppingapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "cart")
@@ -12,9 +13,11 @@ public class Cart {
     private double price;
     @Column(name = "total_quantity")
     private int Totalquantity;
+    @OneToMany (mappedBy = "cartobj")
+    private List<CartItem>cartItemList;
+   // @Column(name = "cart_item_id")
+    //private Integer cartItemId;
 
-    @Column(name = "cart_item_id")
-    private Integer cartItemId;
 
     public Cart() {
     }
@@ -25,7 +28,7 @@ public class Cart {
                 "id=" + id +
                 ", price=" + price +
                 ", Totalquantity=" + Totalquantity +
-                ", cartItemId=" + cartItemId +
+                ", cartItemList=" + cartItemList +
                 '}';
     }
 
@@ -53,11 +56,11 @@ public class Cart {
         Totalquantity = totalquantity;
     }
 
-    public Integer getCartItemId() {
-        return cartItemId;
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
     }
 
-    public void setCartItemId(Integer cartItemId) {
-        this.cartItemId = cartItemId;
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
     }
 }

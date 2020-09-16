@@ -1,6 +1,7 @@
 package com.manuja.shoppingapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product_item")
@@ -15,8 +16,10 @@ public class ProductItem {
     private int quantity;
     @Column(name = "price")
     private double price;
-    @Column(name = "product_id")
-    private Integer productId;
+    @ManyToOne @JoinColumn(name = "product_id")
+    private Product productObj;
+    @OneToMany (mappedBy = "productItemObj")
+    private List<ProductItemPIcture>productItemPIctures;
 
     public ProductItem() {
     }
@@ -29,7 +32,7 @@ public class ProductItem {
                 ", color='" + color + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", productId=" + productId +
+                ", productObj=" + productObj +
                 '}';
     }
 
@@ -73,11 +76,11 @@ public class ProductItem {
         this.price = price;
     }
 
-    public Integer getProductId() {
-        return productId;
+    public Product getProductObj() {
+        return productObj;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setProductObj(Product productObj) {
+        this.productObj = productObj;
     }
 }

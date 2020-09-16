@@ -1,6 +1,7 @@
 package com.manuja.shoppingapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "category_sub_type")
@@ -14,6 +15,8 @@ public class CategorySubType {
     @ManyToOne
     @JoinColumn (name="categorytype_id")
     private CategoryType categoryTypeObj;
+    @OneToMany(mappedBy = "categorySubTypeobj")
+    private List<Product>productList;
 
     public CategorySubType() {
     }
