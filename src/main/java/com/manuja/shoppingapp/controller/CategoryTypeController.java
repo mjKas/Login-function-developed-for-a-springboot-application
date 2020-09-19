@@ -25,6 +25,7 @@ public class CategoryTypeController {
         //setting Model
         model.addAttribute("categoryTypeObj",catType);
 
+
         List<CategoryType> catTypeList = categoryTypeService.findAll();
 
         model.addAttribute("catTypeList",catTypeList);

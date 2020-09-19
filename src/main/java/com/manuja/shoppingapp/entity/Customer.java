@@ -16,7 +16,7 @@ public class Customer {
     @Column(name = "shipping_address_l1")
     private String shippingAdressL1;
     @Column(name = "shipping_address_l2")
-    private String getShippingAdressL2;
+    private String ShippingAdressL2;
     @Column(name = "zip_code")
     private String zipCode;
     @Column(name = "cotact_no")
@@ -35,7 +35,7 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", shippingAdressL1='" + shippingAdressL1 + '\'' +
-                ", getShippingAdressL2='" + getShippingAdressL2 + '\'' +
+                ", getShippingAdressL2='" + ShippingAdressL2 + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", contactNo='" + contactNo + '\'' +
                 ", user=" + user +
@@ -82,12 +82,12 @@ public class Customer {
         this.shippingAdressL1 = shippingAdressL1;
     }
 
-    public String getGetShippingAdressL2() {
-        return getShippingAdressL2;
+    public String getShippingAdressL2() {
+        return ShippingAdressL2;
     }
 
-    public void setGetShippingAdressL2(String getShippingAdressL2) {
-        this.getShippingAdressL2 = getShippingAdressL2;
+    public void setShippingAdressL2(String ShippingAdressL2) {
+        this.ShippingAdressL2 = ShippingAdressL2;
     }
 
     public String getZipCode() {

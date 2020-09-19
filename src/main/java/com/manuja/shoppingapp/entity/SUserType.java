@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user_type")
-public class UserType {
+public class SUserType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -12,12 +12,12 @@ public class UserType {
     private String userType;
     @OneToOne (mappedBy = "userType")
     private  User user;
-    public UserType() {
+    public SUserType() {
     }
 
     @Override
     public String toString() {
-        return "UserType{" +
+        return "SUserType{" +
                 "id=" + id +
                 ", userType='" + userType + '\'' +
                 '}';

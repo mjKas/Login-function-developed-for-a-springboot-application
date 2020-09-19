@@ -14,7 +14,7 @@ public class User {
     private String confirmPassword;
 
     @OneToOne @JoinColumn(name = "user_typeid",referencedColumnName = "id")
-    private UserType userType;
+    private SUserType userType;
     @OneToOne (mappedBy = "user")
     private Employee employee;
     @OneToOne (mappedBy = "user")
@@ -65,11 +65,11 @@ public class User {
         this.confirmPassword = confirmPassword;
     }
 
-    public UserType getUserType() {
+    public SUserType getUserType() {
         return userType;
     }
 
-    public void setUserType(UserType userType) {
+    public void setUserType(SUserType userType) {
         this.userType = userType;
     }
 }

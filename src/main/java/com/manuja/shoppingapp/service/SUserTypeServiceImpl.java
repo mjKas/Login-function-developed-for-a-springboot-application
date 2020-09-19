@@ -1,37 +1,37 @@
 package com.manuja.shoppingapp.service;
 
-import com.manuja.shoppingapp.entity.UserType;
+import com.manuja.shoppingapp.entity.SUserType;
 import com.manuja.shoppingapp.repository.UserTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class UserTypeServiceImpl implements UserTypeService{
+public class SUserTypeServiceImpl implements SUserTypeService {
     @Autowired
     private UserTypeRepository userTypeRepository;
     @Override
-    public void Save(UserType userType) {
+    public void Save(SUserType userType) {
         userTypeRepository.save(userType);
     }
 
     @Override
-    public void Update(UserType userType) {
+    public void Update(SUserType userType) {
         userTypeRepository.save(userType);
     }
 
     @Override
-    public void Delete(UserType userType) {
+    public void Delete(SUserType userType) {
         userTypeRepository.delete(userType);
     }
 
     @Override
-    public List<UserType> findAll() {
+    public List<SUserType> findAll() {
         return userTypeRepository.findAll();
     }
 
     @Override
-    public UserType findById(Integer id) {
+    public SUserType findById(Integer id) {
        return userTypeRepository.findById(id).get();
     }
 }

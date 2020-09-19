@@ -45,6 +45,7 @@ public class CategorySubTypeController {
 
     @RequestMapping(value = "/categorysubtype", method = RequestMethod.POST)
     public String addCategorySubType(CategorySubType categorySubType,ModelMap modelMap){
+
         categorySubTypeService.Save(categorySubType);
         CategorySubType categorySubType1 = new CategorySubType();
         modelMap.addAttribute("categorySubTypeObj",categorySubType1);

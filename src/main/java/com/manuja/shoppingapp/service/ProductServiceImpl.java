@@ -3,9 +3,10 @@ package com.manuja.shoppingapp.service;
 import com.manuja.shoppingapp.entity.Product;
 import com.manuja.shoppingapp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductRepository productRepository;
