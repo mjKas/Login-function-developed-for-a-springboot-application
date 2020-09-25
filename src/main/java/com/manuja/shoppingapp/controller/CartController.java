@@ -15,6 +15,14 @@ import java.util.List;
 public class CartController {
     @Autowired
     CartService cartService;
+
+    @RequestMapping(value = "/header",method = RequestMethod.GET)
+    public String loadHeader(ModelMap modelMap){
+
+        return "Header";
+
+    }
+
     @RequestMapping(value = "/cart",method = RequestMethod.GET)
     public String loadCart(ModelMap modelMap){
         Cart cart = new Cart();
