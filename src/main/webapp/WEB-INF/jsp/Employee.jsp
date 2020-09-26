@@ -96,6 +96,9 @@
             <td><a href="<c:url value='/edit-employee-${Employeee.id}'/>" class="btn btn-warning">edit</a></td>
             <td><a href="<c:url value='/delete-employee-${Employeee.id}'/>" class="btn btn-danger">delete</a></td>
         </tr></c:forEach>
-
+    </tbody>
+    </table>
+    </div>
+</springtag:form>
 </body>
 </html>

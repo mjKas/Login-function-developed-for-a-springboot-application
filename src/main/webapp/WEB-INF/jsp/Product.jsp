@@ -24,7 +24,7 @@
     <div class="form-group">
         <br>
         <div class="row">
-            &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="productName">Product  Name</label></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="name">Product  Name</label></div>
             <div class="col-3"><springtag:input path="name" type="text" class="form-control" id="p" aria-describedby="productName" placeholder="Enter Product name"/></div>
         </div>
 
@@ -38,8 +38,8 @@
 
     </div>
     <div class="row">
-        &nbsp;&nbsp;&nbsp;<div class="col-2"><label for="category">Category Name</label></div>
-        <div class="col-3"> <springtag:select path="categorySubTypeobj" items="${categorySubTypeList}" itemLabel="category" itemValue="id" multiple="false">
+        &nbsp;&nbsp;&nbsp;<div class="col-2"><label for="categorySubTypeobj">Category Name</label></div>
+        <div class="col-3"> <springtag:select path="categorySubTypeobj" items="${categorySubTypeList}" itemLabel="subTypeName" itemValue="Id" multiple="false">
 
         </springtag:select> </div>
 

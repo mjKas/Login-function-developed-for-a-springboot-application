@@ -53,7 +53,7 @@ public class ProductController {
     public  String editProduct(ModelMap modelMap, @PathVariable String id){
         Integer Id = Integer.parseInt(id);
         Product product = productService.FindById(Id);
-        modelMap.addAttribute("productobj",product);
+        modelMap.addAttribute("productObj",product);
 
         List<Product>products = productService.findAll();
         modelMap.addAttribute("products",products);

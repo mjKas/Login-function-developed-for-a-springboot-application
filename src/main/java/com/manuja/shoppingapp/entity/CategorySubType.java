@@ -23,11 +23,7 @@ public class CategorySubType {
 
     @Override
     public String toString() {
-        return "CategorySubType{" +
-                "Id=" + Id +
-                ", categoryTypeId=" +
-                ", subTypeName='" + subTypeName + '\'' +
-                '}';
+        return subTypeName;
     }
 
     public CategoryType getCategoryTypeObj() {

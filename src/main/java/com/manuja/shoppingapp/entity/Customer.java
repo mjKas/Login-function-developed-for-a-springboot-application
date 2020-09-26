@@ -23,6 +23,8 @@ public class Customer {
     private String contactNo;
     @OneToOne @JoinColumn(name = "userid", referencedColumnName = "id")
     private User user;
+    @OneToOne (mappedBy = "customer")
+    private CustomerStatus customerStatus;
 
     public Customer() {
     }
@@ -112,5 +114,13 @@ public class Customer {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public CustomerStatus getCustomerStatus() {
+        return customerStatus;
+    }
+
+    public void setCustomerStatus(CustomerStatus customerStatus) {
+        this.customerStatus = customerStatus;
     }
 }

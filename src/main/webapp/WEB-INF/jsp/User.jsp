@@ -24,8 +24,8 @@
     <div class="form-group">
         <br>
         <div class="row">
-            &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="uname">User Name</label></div>
-            <div class="col-3"><springtag:input path="username" type="text" class="form-control" id="uname" aria-describedby="username" placeholder="Enter User Name"/></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="username">User Name</label></div>
+            <div class="col-3"><springtag:input path="username" type="text" class="form-control" id="id" aria-describedby="username" placeholder="Enter User Name"/></div>
         </div>
 
         <div class="row">
@@ -38,11 +38,11 @@
 
         <div class="row">
             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="password">Password</label></div>
-            <div class="col-3"><springtag:input path="password" type="password" class="form-control" id="password"  placeholder="Enter Password"/></div>
+            <div class="col-3"><springtag:input path="password" type="password" class="form-control" id="id"  placeholder="Enter Password"/></div>
         </div>
         <div class="row">
             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="confirmPassword">Confirm Password</label></div>
-            <div class="col-3"><springtag:input path="confirmPassword" type="password" class="form-control" id="confirmPassword"  placeholder="Enter confirm password"/></div>
+            <div class="col-3"><springtag:input path="confirmPassword" type="password" class="form-control" id="id"  placeholder="Enter confirm password"/></div>
         </div>
         <div class="form-group form-check">
 

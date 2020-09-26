@@ -68,7 +68,7 @@
         <br>
         <div class="row">
             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="zipcode">Zipcode</label></div>
-            <div class="col-3"> <springtag:input path="zipcode" type="text" class="form-control" id="productDescription" placeholder="Enter the Zipcode"/></div>
+            <div class="col-3"> <springtag:input path="zipCode" type="text" class="form-control" id="productDescription" placeholder="Enter the Zipcode"/></div>
         </div>
 
     </div>

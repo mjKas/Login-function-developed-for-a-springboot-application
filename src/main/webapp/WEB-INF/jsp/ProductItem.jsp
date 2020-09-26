@@ -24,8 +24,8 @@
     <div class="form-group">
         <br>
         <div class="row">
-            &nbsp;&nbsp;&nbsp;<div class="col-2"><label for="productName">Product</label></div>
-            <div class="col-3"> <springtag:select path="productObj" items="${productList}" itemLabel="productType" itemValue="id" multiple="false">
+            &nbsp;&nbsp;&nbsp;<div class="col-2"><label for="productObj">Product</label></div>
+            <div class="col-3"> <springtag:select path="productObj" items="${productList}" itemLabel="name" itemValue="id" multiple="false">
 
             </springtag:select> </div>
 

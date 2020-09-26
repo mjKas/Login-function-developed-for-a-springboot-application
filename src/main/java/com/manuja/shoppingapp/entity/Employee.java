@@ -3,7 +3,7 @@ package com.manuja.shoppingapp.entity;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "employee")
 public class Employee {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -17,6 +17,8 @@ public class Employee {
     private String contactNo;
     @OneToOne @JoinColumn(name = "userid", referencedColumnName = "id")
     private User user;
+  //  @OneToOne (mappedBy = "employee")
+  //  private EmployeeStatus employeeStatus;
 
     public Employee() {
     }
@@ -80,4 +82,12 @@ public class Employee {
     public void setUser(User user) {
         this.user = user;
     }
+
+//    public EmployeeStatus getEmployeeStatus() {
+//        return employeeStatus;
+//    }
+//
+//    public void setEmployeeStatus(EmployeeStatus employeeStatus) {
+//        this.employeeStatus = employeeStatus;
+//    }
 }

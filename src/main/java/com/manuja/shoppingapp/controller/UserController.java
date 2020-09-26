@@ -1,8 +1,8 @@
 package com.manuja.shoppingapp.controller;
 
-import com.manuja.shoppingapp.entity.SUserType;
+//import com.manuja.shoppingapp.entity.SUserType;
 import com.manuja.shoppingapp.entity.User;
-import com.manuja.shoppingapp.service.SUserTypeService;
+//import com.manuja.shoppingapp.service.SUserTypeService;
 import com.manuja.shoppingapp.service.UserService;
 import org.hibernate.usertype.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
-    @Autowired
-    SUserTypeService sUserTypeService;
+
+//    SUserTypeService sUserTypeService;
 
     @RequestMapping (value = "/user", method = RequestMethod.GET)
     public String loadUserForm(ModelMap modelMap){
@@ -30,8 +30,8 @@ public class UserController {
         List<User> userList = userService.findAll();
         modelMap.addAttribute("userList",userList);
 
-        List<SUserType> userTypeList = sUserTypeService.findAll();
-        modelMap.addAttribute("userTypeList",userTypeList);
+////        List<SUserType> userTypeList = sUserTypeService.findAll();
+//        modelMap.addAttribute("userTypeList",userTypeList);
 
         modelMap.addAttribute("saveFlag",true);
         //System.out.println("Load User  form function");
@@ -51,8 +51,8 @@ public class UserController {
         modelMap.addAttribute("userList",userList);
         modelMap.addAttribute("saveFlag",true);
 
-        List<SUserType> userTypeList = sUserTypeService.findAll();
-        modelMap.addAttribute("userTypeList",userTypeList);
+//        List<SUserType> userTypeList = sUserTypeService.findAll();
+//        modelMap.addAttribute("userTypeList",userTypeList);
 
         return "User";
 
@@ -69,8 +69,8 @@ public class UserController {
         model.addAttribute("userList",userList);
         model.addAttribute("saveFlag",false);
 
-        List<SUserType> userTypeList = sUserTypeService.findAll();
-        model.addAttribute("userTypeList",userTypeList);
+//        List<SUserType> userTypeList = sUserTypeService.findAll();
+//        model.addAttribute("userTypeList",userTypeList);
 
         return "User";
     }
@@ -86,8 +86,8 @@ public class UserController {
         model.addAttribute("userList",userList);
         model.addAttribute("saveFlag",true);
 
-        List<SUserType> userTypeList = sUserTypeService.findAll();
-        model.addAttribute("userTypeList",userTypeList);
+//        List<SUserType> userTypeList = sUserTypeService.findAll();
+//        model.addAttribute("userTypeList",userTypeList);
 
         return "User";
     }
@@ -106,8 +106,8 @@ public class UserController {
         model.addAttribute("userList",userList);
         model.addAttribute("saveFlag",true);
 
-        List<SUserType> userTypeList = sUserTypeService.findAll();
-        model.addAttribute("userTypeList",userTypeList);
+//        List<SUserType> userTypeList = sUserTypeService.findAll();
+//        model.addAttribute("userTypeList",userTypeList);
 
         return "User";
     }

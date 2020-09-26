@@ -31,18 +31,18 @@
     <div class="form-group">
     <br>
     <div class="row">
-    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="itemid">Product Item Id</label></div>
-    <div class="col-3"> <springtag:input path="productItemId" type="text" class="form-control" id="itemid" placeholder="Enter Last Name"/></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="productItemId">Product Item Id</label></div>
+    <div class="col-3"> <springtag:input path="productItemId" type="text" class="form-control" id="id" placeholder="Product Item ID"/></div>
     </div>
 
     <div class="row">
-    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="qty">Quantity</label></div>
-    <div class="col-3"> <springtag:input path="quantity" type="text" class="form-control" id="qty" placeholder="Enter Email"/></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="quantity">Quantity</label></div>
+    <div class="col-3"> <springtag:input path="quantity" type="text" class="form-control" id="id" placeholder="Quantity"/></div>
     </div>
 
     <div class="row">
-    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="completedOrder">Completed Order</label></div>
-    <div class="col-3"> <springtag:input path="completedOrderObj" type="text" class="form-control" id="completedOrder" placeholder="Enter Contact Number"/></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-2"><label for="completedOrderObj">Completed Order</label></div>
+    <div class="col-3"> <springtag:input path="completedOrderObj" type="text" class="form-control" id="id" placeholder="Completed Order"/></div>
     </div>
 
     </div>
@@ -97,7 +97,10 @@
             <td><a href="<c:url value='/edit-solditem-${SoldItems.id}'/>" class="btn btn-warning">edit</a></td>
             <td><a href="<c:url value='/delete-solditem-${SoldItems.id}'/>" class="btn btn-danger">delete</a></td>
         </tr></c:forEach>
-
+    </tbody>>
+    </table>
+    </div>
+</springtag:form>
     </body>
 </body>
 </html>
